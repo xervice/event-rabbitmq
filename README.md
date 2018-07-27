@@ -1,7 +1,9 @@
 EventRabbitMq
 =====================
 
-[![Build Status](https://travis-ci.org/xervice/eventrabbitmq).svg?branch=master)](https://travis-ci.org/xervice/eventrabbitmq)
+[![Build Status](https://travis-ci.org/xervice/event-rabbitmq.svg?branch=master)](https://travis-ci.org/xervice/event-rabbitmq)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/xervice/event-rabbitmq/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/xervice/event-rabbitmq/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/xervice/event-rabbitmq/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/xervice/event-rabbitmq/?branch=master)
 
 
 Installation
