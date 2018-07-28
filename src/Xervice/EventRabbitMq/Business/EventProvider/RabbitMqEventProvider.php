@@ -24,12 +24,8 @@ class RabbitMqEventProvider extends AbstractWithLocator implements EventProvider
         $message = new RabbitMqMessageDataProvider();
         $message
             ->setExchange($this->getFactory()->createEventExchange())
-            ->setMessage(
-                json_encode(
-                    $eventDataProvider->toArray()
-                )
-            );
+            ->setMessage($eventDataProvider);
 
-        $this->getFactory()->getRabbitMqFacade()->sendMessage($message);
+        $this->getFactory()->getRabbitMqClient()->sendMessage($message);
     }
 }

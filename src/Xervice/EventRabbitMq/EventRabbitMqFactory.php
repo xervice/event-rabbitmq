@@ -9,7 +9,7 @@ use DataProvider\RabbitMqQueueBindDataProvider;
 use DataProvider\RabbitMqQueueDataProvider;
 use Xervice\Core\Factory\AbstractFactory;
 use Xervice\Event\EventFacade;
-use Xervice\RabbitMQ\RabbitMQFacade;
+use Xervice\RabbitMQ\RabbitMQClient;
 
 /**
  * @method \Xervice\EventRabbitMq\EventRabbitMqConfig getConfig()
@@ -52,11 +52,11 @@ class EventRabbitMqFactory extends AbstractFactory
     }
 
     /**
-     * @return \Xervice\RabbitMQ\RabbitMQFacade
+     * @return \Xervice\RabbitMQ\RabbitMQClient
      */
-    public function getRabbitMqFacade(): RabbitMQFacade
+    public function getRabbitMqClient(): RabbitMQClient
     {
-        return $this->getDependency(EventRabbitMqDependencyProvider::RABBITMQ_FACADE);
+        return $this->getDependency(EventRabbitMqDependencyProvider::RABBITMQ_CLIENT);
     }
 
     /**

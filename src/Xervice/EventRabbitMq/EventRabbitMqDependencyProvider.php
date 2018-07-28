@@ -12,7 +12,7 @@ use Xervice\Core\Dependency\Provider\AbstractProvider;
  */
 class EventRabbitMqDependencyProvider extends AbstractProvider
 {
-    public const RABBITMQ_FACADE = 'rabbitmq.facade';
+    public const RABBITMQ_CLIENT = 'rabbitmq.client';
 
     public const EVENT_FACADE = 'event.facade';
 
@@ -21,8 +21,8 @@ class EventRabbitMqDependencyProvider extends AbstractProvider
      */
     public function handleDependencies(DependencyProviderInterface $dependencyProvider): void
     {
-        $dependencyProvider[self::RABBITMQ_FACADE] = function (DependencyProviderInterface $dependencyProvider) {
-            return $dependencyProvider->getLocator()->rabbitMQ()->facade();
+        $dependencyProvider[self::RABBITMQ_CLIENT] = function (DependencyProviderInterface $dependencyProvider) {
+            return $dependencyProvider->getLocator()->rabbitMQ()->client();
         };
 
         $dependencyProvider[self::EVENT_FACADE] = function (DependencyProviderInterface $dependencyProvider) {

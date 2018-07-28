@@ -20,13 +20,7 @@ class QueueListener extends AbstractListener
     ): void {
 
         foreach ($collectionDataProvider->getMessages() as $message) {
-            $event = new EventDataProvider();
-            $event->fromArray(
-                json_decode(
-                    $message->getMessage(),
-                    true
-                )
-            );
+            $event = $message->getMessage();
 
             if ($event->hasName()) {
                 $this->getFactory()->getEventFacade()->eventToListener($event);
