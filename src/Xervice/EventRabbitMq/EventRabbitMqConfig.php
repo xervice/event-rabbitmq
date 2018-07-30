@@ -8,9 +8,9 @@ use Xervice\Core\Config\AbstractConfig;
 
 class EventRabbitMqConfig extends AbstractConfig
 {
-    public const QUEUE_NAME = 'queue.name';
+    public const QUEUE_NAME = 'event.queue.name';
 
-    public const EXCHANGE_NAME = 'exchange.name';
+    public const EXCHANGE_NAME = 'event.exchange.name';
 
     /**
      * @return string
