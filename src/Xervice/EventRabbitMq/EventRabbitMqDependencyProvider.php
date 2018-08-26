@@ -15,7 +15,7 @@ class EventRabbitMqDependencyProvider extends AbstractDependencyProvider
 
     public function handleDependencies(DependencyContainerInterface $container): DependencyContainerInterface
     {
-        $container[self::RABBITMQ_CLIENT] = function (DependencyContainerInterface $container) {
+        $container[self::RABBITMQ_FACADE] = function (DependencyContainerInterface $container) {
             return $container->getLocator()->rabbitMQ()->facade();
         };
 
