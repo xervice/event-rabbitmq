@@ -4,29 +4,25 @@
 namespace Xervice\EventRabbitMq;
 
 
-use Xervice\Core\Dependency\DependencyProviderInterface;
-use Xervice\Core\Dependency\Provider\AbstractProvider;
+use Xervice\Core\Business\Model\Dependency\DependencyContainerInterface;
+use Xervice\Core\Business\Model\Dependency\Provider\AbstractDependencyProvider;
 
-/**
- * @method \Xervice\Core\Locator\Locator getLocator()
- */
-class EventRabbitMqDependencyProvider extends AbstractProvider
+class EventRabbitMqDependencyProvider extends AbstractDependencyProvider
 {
-    public const RABBITMQ_CLIENT = 'rabbitmq.client';
+    public const RABBITMQ_FACADE = 'rabbitmq.facade';
 
     public const EVENT_FACADE = 'event.facade';
 
-    /**
-     * @param \Xervice\Core\Dependency\DependencyProviderInterface $dependencyProvider
-     */
-    public function handleDependencies(DependencyProviderInterface $dependencyProvider): void
+    public function handleDependencies(DependencyContainerInterface $container): DependencyContainerInterface
     {
-        $dependencyProvider[self::RABBITMQ_CLIENT] = function (DependencyProviderInterface $dependencyProvider) {
-            return $dependencyProvider->getLocator()->rabbitMQ()->client();
+        $container[self::RABBITMQ_CLIENT] = function (DependencyContainerInterface $container) {
+            return $container->getLocator()->rabbitMQ()->facade();
         };
 
-        $dependencyProvider[self::EVENT_FACADE] = function (DependencyProviderInterface $dependencyProvider) {
-            return $dependencyProvider->getLocator()->event()->facade();
+        $container[self::EVENT_FACADE] = function (DependencyContainerInterface $container) {
+            return $container->getLocator()->event()->facade();
         };
+
+        return $container;
     }
 }

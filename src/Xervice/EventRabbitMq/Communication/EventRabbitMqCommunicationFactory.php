@@ -7,14 +7,14 @@ namespace Xervice\EventRabbitMq;
 use DataProvider\RabbitMqExchangeDataProvider;
 use DataProvider\RabbitMqQueueBindDataProvider;
 use DataProvider\RabbitMqQueueDataProvider;
-use Xervice\Core\Factory\AbstractFactory;
-use Xervice\Event\EventFacade;
-use Xervice\RabbitMQ\RabbitMQClient;
+use Xervice\Core\Business\Model\Factory\AbstractCommunicationFactory;
+use Xervice\Event\Business\EventFacade;
+use Xervice\RabbitMQ\Business\RabbitMQFacade;
 
 /**
  * @method \Xervice\EventRabbitMq\EventRabbitMqConfig getConfig()
  */
-class EventRabbitMqFactory extends AbstractFactory
+class EventRabbitMqCommunicationFactory extends AbstractCommunicationFactory
 {
 
     /**
@@ -52,15 +52,15 @@ class EventRabbitMqFactory extends AbstractFactory
     }
 
     /**
-     * @return \Xervice\RabbitMQ\RabbitMQClient
+     * @return \Xervice\RabbitMQ\Business\RabbitMQFacade
      */
-    public function getRabbitMqClient(): RabbitMQClient
+    public function getRabbitMqFacade(): RabbitMQFacade
     {
-        return $this->getDependency(EventRabbitMqDependencyProvider::RABBITMQ_CLIENT);
+        return $this->getDependency(EventRabbitMqDependencyProvider::RABBITMQ_FACADE);
     }
 
     /**
-     * @return \Xervice\Event\EventFacade
+     * @return \Xervice\Event\Business\EventFacade
      */
     public function getEventFacade(): EventFacade
     {

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Xervice\EventRabbitMq\Business\EventProvider;
+namespace Xervice\EventRabbitMq\Communication\Plugin\EventProvider;
 
 
 use DataProvider\EventDataProvider;

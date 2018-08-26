@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Xervice\EventRabbitMq\Business\Listener;
+namespace Xervice\EventRabbitMq\Communication\Plugin\Listener;
 
 
 use DataProvider\EventDataProvider;

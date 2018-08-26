@@ -8,23 +8,31 @@
     }
   ],
   "require-dev": {
-    "phpunit/phpunit": "7.1.*",
     "codeception/codeception": "*",
-    "symfony/var-dumper": "*"
+    "symfony/var-dumper": "*",
+    "phpstan/phpstan": "*"
   },
   "require": {
     "php": ">=7.1.0",
-    "xervice/data-provider": "^1.4.4",
-    "xervice/event": "^2.1.0",
-    "xervice/rabbitmq": "^2.0.0"
+    "xervice/core": "^4.0.0",
+    "xervice/data-provider": "^2.0.0",
+    "xervice/event": "^3.0.0",
+    "xervice/rabbitmq": "^3.0.0"
   },
   "autoload": {
     "psr-4": {
-      "XerviceTest\\": "tests/Xervice/",
       "DataProvider\\": "src/Generated/"
     },
     "psr-0": {
       "Xervice\\": "src/"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "XerviceTest\\": "tests/Xervice/"
+    }
+  },
+  "scripts": {
+    "phpstan": "vendor/bin/phpstan analyse src/Xervice --level=7"
   }
 }

@@ -1,15 +1,13 @@
 <?php
-
+declare(strict_types=1);
 
 namespace Xervice\EventRabbitMq;
 
-
-use Xervice\Core\Config\AbstractConfig;
+use Xervice\Core\Business\Model\Config\AbstractConfig;
 
 class EventRabbitMqConfig extends AbstractConfig
 {
     public const QUEUE_NAME = 'event.queue.name';
-
     public const EXCHANGE_NAME = 'event.exchange.name';
 
     /**

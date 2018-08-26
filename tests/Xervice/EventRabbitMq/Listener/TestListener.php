@@ -5,7 +5,7 @@ namespace XerviceTest\EventRabbitMq\Listener;
 
 
 use DataProvider\EventDataProvider;
-use Xervice\Event\Business\Listener\EventListenerInterface;
+use Xervice\Event\Communication\Plugin\Listener\EventListenerInterface;
 
 class TestListener implements EventListenerInterface
 {

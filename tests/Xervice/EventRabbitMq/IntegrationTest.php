@@ -2,32 +2,31 @@
 namespace XerviceTest\EventRabbitMq;
 
 use DataProvider\EventDataProvider;
-use DataProvider\RabbitMqMessageDataProvider;
 use DataProvider\TestEventDataProvider;
-use Xervice\Config\XerviceConfig;
-use Xervice\Core\Locator\Locator;
+use Xervice\Config\Business\XerviceConfig;
+use Xervice\Core\Business\Model\Locator\Locator;
+use Xervice\DataProvider\Business\DataProviderFacade;
 use Xervice\DataProvider\DataProviderConfig;
-use Xervice\DataProvider\DataProviderFacade;
-use Xervice\Event\EventFacade;
-use Xervice\RabbitMQ\RabbitMQFacade;
+use Xervice\Event\Business\EventFacade;
+use Xervice\RabbitMQ\Business\RabbitMQFacade;
 
 require_once __DIR__ . '/TestInjector/EventDependencyProvider.php';
-require_once __DIR__ . '/TestInjector/EventFactory.php';
+require_once __DIR__ . '/TestInjector/EventBusinessFactory.php';
 require_once __DIR__ . '/TestInjector/RabbitMQDependencyProvider.php';
 
 class IntegrationTest extends \Codeception\Test\Unit
 {
     protected function _before()
     {
-        XerviceConfig::getInstance()->getConfig()->set(DataProviderConfig::FILE_PATTERN, '*.dataprovider.xml');
+        XerviceConfig::set(DataProviderConfig::FILE_PATTERN, '*.dataprovider.xml');
         $this->getDataProviderFacade()->generateDataProvider();
-        XerviceConfig::getInstance()->getConfig()->set(DataProviderConfig::FILE_PATTERN, '*.testprovider.xml');
+        XerviceConfig::set(DataProviderConfig::FILE_PATTERN, '*.testprovider.xml');
         $this->getDataProviderFacade()->generateDataProvider();
     }
 
     protected function _after()
     {
-//        $this->getDataProviderFacade()->cleanDataProvider();
+        $this->getDataProviderFacade()->cleanDataProvider();
     }
 
     /**
@@ -67,7 +66,7 @@ class IntegrationTest extends \Codeception\Test\Unit
     }
 
     /**
-     * @return \Xervice\DataProvider\DataProviderFacade
+     * @return \Xervice\DataProvider\Business\DataProviderFacade
      */
     private function getDataProviderFacade(): DataProviderFacade
     {
@@ -75,7 +74,7 @@ class IntegrationTest extends \Codeception\Test\Unit
     }
 
     /**
-     * @return \Xervice\Event\EventFacade
+     * @return \Xervice\Event\Business\EventFacade
      */
     private function getEventFacade(): EventFacade
     {
@@ -83,7 +82,7 @@ class IntegrationTest extends \Codeception\Test\Unit
     }
 
     /**
-     * @return \Xervice\RabbitMQ\RabbitMQFacade
+     * @return \Xervice\RabbitMQ\Business\RabbitMQFacade
      */
     private function getRabbitMQFacade(): RabbitMQFacade
     {

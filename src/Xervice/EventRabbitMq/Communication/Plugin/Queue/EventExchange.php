@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Xervice\EventRabbitMq\Business\Queue;
+namespace Xervice\EventRabbitMq\Communication\Plugin\Queue;
 
 
 use Xervice\Core\Locator\AbstractWithLocator;
