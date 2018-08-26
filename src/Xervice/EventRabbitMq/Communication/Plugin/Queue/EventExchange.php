@@ -2,21 +2,19 @@
 
 
 namespace Xervice\EventRabbitMq\Communication\Plugin\Queue;
+use Xervice\Core\Plugin\AbstractCommunicationPlugin;
+use Xervice\RabbitMQ\Business\Dependency\Exchange\ExchangeInterface;
+use Xervice\RabbitMQ\Business\Model\Core\ExchangeProviderInterface;
 
-
-use Xervice\Core\Locator\AbstractWithLocator;
-use Xervice\RabbitMQ\Core\ExchangeProviderInterface;
-use Xervice\RabbitMQ\Exchange\ExchangeInterface;
 
 /**
  * @method \Xervice\EventRabbitMq\EventRabbitMqFactory getFactory()
  */
-class EventExchange extends AbstractWithLocator implements ExchangeInterface
+class EventExchange extends AbstractCommunicationPlugin implements ExchangeInterface
 {
     /**
-     * @param \Xervice\RabbitMQ\Core\ExchangeProviderInterface $exchangeProvider
+     * @param \Xervice\EventRabbitMq\Communication\Plugin\Queue\ExchangeProviderInterface $exchangeProvider
      *
-     * @throws \Core\Locator\Dynamic\ServiceNotParseable
      */
     public function declareExchange(ExchangeProviderInterface $exchangeProvider)
     {

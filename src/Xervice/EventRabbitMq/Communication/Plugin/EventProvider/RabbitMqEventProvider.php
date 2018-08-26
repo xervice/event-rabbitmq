@@ -6,18 +6,16 @@ namespace Xervice\EventRabbitMq\Communication\Plugin\EventProvider;
 
 use DataProvider\EventDataProvider;
 use DataProvider\RabbitMqMessageDataProvider;
-use Xervice\Core\Locator\AbstractWithLocator;
-use Xervice\Event\Business\Provider\EventProviderInterface;
+use Xervice\Core\Plugin\AbstractCommunicationPlugin;
+use Xervice\Event\Business\Model\Provider\EventProviderInterface;
 
 /**
- * @method \Xervice\EventRabbitMq\EventRabbitMqFactory getFactory()
+ * @method \Xervice\EventRabbitMq\EventRabbitMqCommunicationFactory getFactory()
  */
-class RabbitMqEventProvider extends AbstractWithLocator implements EventProviderInterface
+class RabbitMqEventProvider extends AbstractCommunicationPlugin implements EventProviderInterface
 {
     /**
      * @param \DataProvider\EventDataProvider $eventDataProvider
-     *
-     * @throws \Core\Locator\Dynamic\ServiceNotParseable
      */
     public function provideEvent(EventDataProvider $eventDataProvider): void
     {
@@ -26,6 +24,6 @@ class RabbitMqEventProvider extends AbstractWithLocator implements EventProvider
             ->setExchange($this->getFactory()->createEventExchange())
             ->setMessage($eventDataProvider);
 
-        $this->getFactory()->getRabbitMqClient()->sendMessage($message);
+        $this->getFactory()->getRabbitMqFacade()->sendMessage($message);
     }
 }

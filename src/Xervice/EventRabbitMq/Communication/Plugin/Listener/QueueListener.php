@@ -4,10 +4,9 @@
 namespace Xervice\EventRabbitMq\Communication\Plugin\Listener;
 
 
-use DataProvider\EventDataProvider;
 use DataProvider\RabbitMqMessageCollectionDataProvider;
 use PhpAmqpLib\Channel\AMQPChannel;
-use Xervice\RabbitMQ\Worker\Listener\AbstractListener;
+use Xervice\RabbitMQ\Business\Model\Worker\Listener\AbstractListener;
 
 /**
  * @method \Xervice\EventRabbitMq\EventRabbitMqFactory getFactory()
@@ -32,7 +31,6 @@ class QueueListener extends AbstractListener
 
     /**
      * @return string
-     * @throws \Core\Locator\Dynamic\ServiceNotParseable
      */
     public function getQueueName(): string
     {
