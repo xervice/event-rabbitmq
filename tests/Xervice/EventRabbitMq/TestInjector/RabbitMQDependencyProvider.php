@@ -4,9 +4,9 @@
 namespace App\RabbitMQ;
 
 
-use Xervice\EventRabbitMq\Communication\Plugin\Listener\QueueListener;
-use Xervice\EventRabbitMq\Communication\Plugin\Queue\EventExchange;
-use Xervice\EventRabbitMq\Communication\Plugin\Queue\EventQueue;
+use Xervice\EventRabbitMq\Business\Plugin\Listener\QueueListener;
+use Xervice\EventRabbitMq\Business\Plugin\Queue\EventExchange;
+use Xervice\EventRabbitMq\Business\Plugin\Queue\EventQueue;
 use Xervice\RabbitMQ\RabbitMQDependencyProvider as XerviceRabbitMQDependencyProvider;
 
 class RabbitMQDependencyProvider extends XerviceRabbitMQDependencyProvider

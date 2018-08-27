@@ -1,17 +1,17 @@
 <?php
 
 
-namespace Xervice\EventRabbitMq\Communication\Plugin\Queue;
+namespace Xervice\EventRabbitMq\Business\Plugin\Queue;
 
 
-use Xervice\Core\Plugin\AbstractCommunicationPlugin;
+use Xervice\Core\Plugin\AbstractBusinessPlugin;
 use Xervice\RabbitMQ\Business\Dependency\Queue\QueueInterface;
 use Xervice\RabbitMQ\Business\Model\Core\QueueProviderInterface;
 
 /**
- * @method \Xervice\EventRabbitMq\EventRabbitMqFactory getFactory()
+ * @method \Xervice\EventRabbitMq\Business\EventRabbitMqBusinessFactory getFactory()
  */
-class EventQueue extends AbstractCommunicationPlugin implements QueueInterface
+class EventQueue extends AbstractBusinessPlugin implements QueueInterface
 {
     /**
      * @param \Xervice\RabbitMQ\Business\Model\Core\QueueProviderInterface $queueProvider

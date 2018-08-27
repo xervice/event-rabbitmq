@@ -1,20 +1,20 @@
 <?php
 
 
-namespace Xervice\EventRabbitMq;
+namespace Xervice\EventRabbitMq\Business;
 
 
 use DataProvider\RabbitMqExchangeDataProvider;
 use DataProvider\RabbitMqQueueBindDataProvider;
 use DataProvider\RabbitMqQueueDataProvider;
-use Xervice\Core\Business\Model\Factory\AbstractCommunicationFactory;
+use Xervice\Core\Business\Model\Factory\AbstractBusinessFactory;
 use Xervice\Event\Business\EventFacade;
 use Xervice\RabbitMQ\Business\RabbitMQFacade;
 
 /**
  * @method \Xervice\EventRabbitMq\EventRabbitMqConfig getConfig()
  */
-class EventRabbitMqCommunicationFactory extends AbstractCommunicationFactory
+class EventRabbitMqBusinessFactory extends AbstractBusinessFactory
 {
 
     /**

@@ -1,18 +1,18 @@
 <?php
 
 
-namespace Xervice\EventRabbitMq\Communication\Plugin\EventProvider;
+namespace Xervice\EventRabbitMq\Business\Plugin\EventProvider;
 
 
 use DataProvider\EventDataProvider;
 use DataProvider\RabbitMqMessageDataProvider;
-use Xervice\Core\Plugin\AbstractCommunicationPlugin;
+use Xervice\Core\Plugin\AbstractBusinessPlugin;
 use Xervice\Event\Business\Model\Provider\EventProviderInterface;
 
 /**
- * @method \Xervice\EventRabbitMq\EventRabbitMqCommunicationFactory getFactory()
+ * @method \Xervice\EventRabbitMq\EventRabbitMqBusinessFactory getFactory()
  */
-class RabbitMqEventProvider extends AbstractCommunicationPlugin implements EventProviderInterface
+class RabbitMqEventProvider extends AbstractBusinessPlugin implements EventProviderInterface
 {
     /**
      * @param \DataProvider\EventDataProvider $eventDataProvider

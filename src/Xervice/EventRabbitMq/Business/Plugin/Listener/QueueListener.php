@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Xervice\EventRabbitMq\Communication\Plugin\Listener;
+namespace Xervice\EventRabbitMq\Business\Plugin\Listener;
 
 
 use DataProvider\RabbitMqMessageCollectionDataProvider;
@@ -9,7 +9,7 @@ use PhpAmqpLib\Channel\AMQPChannel;
 use Xervice\RabbitMQ\Business\Model\Worker\Listener\AbstractListener;
 
 /**
- * @method \Xervice\EventRabbitMq\EventRabbitMqFactory getFactory()
+ * @method \Xervice\EventRabbitMq\Business\EventRabbitMqBusinessFactory getFactory()
  */
 class QueueListener extends AbstractListener
 {

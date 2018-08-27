@@ -6,7 +6,7 @@ namespace App\Event;
 
 use Xervice\Event\Business\EventBusinessFactory as XerviceEventBusinessFactory;
 use Xervice\Event\Business\Model\Provider\EventProviderInterface;
-use Xervice\EventRabbitMq\Communication\Plugin\EventProvider\RabbitMqEventProvider;
+use Xervice\EventRabbitMq\Business\Plugin\EventProvider\RabbitMqEventProvider;
 
 class EventBusinessFactory extends XerviceEventBusinessFactory
 {
