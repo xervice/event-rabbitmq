@@ -9,6 +9,7 @@ use DataProvider\RabbitMqQueueBindDataProvider;
 use DataProvider\RabbitMqQueueDataProvider;
 use Xervice\Core\Business\Model\Factory\AbstractBusinessFactory;
 use Xervice\Event\Business\EventFacade;
+use Xervice\EventRabbitMq\EventRabbitMqDependencyProvider;
 use Xervice\RabbitMQ\Business\RabbitMQFacade;
 
 /**
