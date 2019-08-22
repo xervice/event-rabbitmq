@@ -17,7 +17,7 @@
     "xervice/core": "^4.0.0",
     "xervice/data-provider": "^2.0.0",
     "xervice/event": "^3.0.0",
-    "xervice/rabbitmq": "^3.0.0"
+    "xervice/rabbitmq": "^3.0.0|^4.0.0"
   },
   "autoload": {
     "psr-4": {

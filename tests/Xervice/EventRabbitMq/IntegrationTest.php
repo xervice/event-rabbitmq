@@ -2,6 +2,7 @@
 namespace XerviceTest\EventRabbitMq;
 
 use DataProvider\EventDataProvider;
+use DataProvider\RabbitMqWorkerConfigDataProvider;
 use DataProvider\TestEventDataProvider;
 use Xervice\Config\Business\XerviceConfig;
 use Xervice\Core\Business\Model\Locator\Locator;
@@ -54,7 +55,8 @@ class IntegrationTest extends \Codeception\Test\Unit
             ->setMessage($data);
         $this->getEventFacade()->fireEvent($event);
 
-        $this->getRabbitMQFacade()->runWorker();
+
+        $this->getRabbitMQFacade()->runWorker(new RabbitMqWorkerConfigDataProvider());
 
         $response = ob_get_contents();
         ob_end_clean();
